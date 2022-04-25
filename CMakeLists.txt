@@ -1,13 +1,4 @@
-# CMakeLists files in this project can
-# refer to the root source directory of the project as ${PROJECT_SOURCE_DIR} and
-# to the root binary directory of the project as ${PROJECT_BINARY_DIR}.
-
-cmake_minimum_required(VERSION 3.14)
-project (wolfram_script_cmake)
-
-add_library(${PROJECT_NAME} INTERFACE)
-
-set(ENABLE_WOLFRAM_SCRIPT False CACHE BOOL "whether WOLFRAM_SCRIPT is enabled")
+set(ENABLE_WOLFRAM_SCRIPT True CACHE BOOL "whether WOLFRAM_SCRIPT is enabled")
 
 if(ENABLE_WOLFRAM_SCRIPT)
     find_program(FOUND_WOLFRAM_SCRIPT wolframscript)
