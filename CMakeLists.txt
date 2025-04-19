@@ -6,10 +6,9 @@ if(ENABLE_WOLFRAM_SCRIPT)
         message(STATUS "WolframScript found. WolframScript generators will be enabled if it is usable.")
         execute_process(
             COMMAND
-                wolframscript -c GreaterEqual[$VersionNumber,11.0]
+                ${FOUND_WOLFRAM_SCRIPT} -c GreaterEqual[$VersionNumber,11.0]
             OUTPUT_VARIABLE
                 WOLFRAM_SCRIPT_TEST_VER
-            OUTPUT_STRIP_TRAILING_WHITESPACE
         )
         if(WOLFRAM_SCRIPT_TEST_VER MATCHES "True")
             message(STATUS "Test passed, WolframScript generators are enabled")
